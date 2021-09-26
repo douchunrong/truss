@@ -28,6 +28,10 @@ func InterruptHandler(errc chan<- error) {
 `
 const HookSetConfig = `
 func SetConfig(cfg svc.Config) svc.Config {
+	// Place add custom ctx value 
+	ctxMap := make(map[string]interface{})
+	svc.SetCustomCtx(ctxMap)
+
 	return cfg
 }
 `
