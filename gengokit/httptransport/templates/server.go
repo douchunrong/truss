@@ -217,7 +217,20 @@ func headersToContext(ctx context.Context, r *http.Request) context.Context {
 	ctx = context.WithValue(ctx, "transport", "HTTPJSON")
 	
 	// custom value
-	ctx = handlers.SetCtx(ctx)
+	ctx = setCtx(ctx)
 	return ctx
+}
+
+var customCtx map[string]interface{}
+
+func setCtx(ctx context.Context) context.Context{
+	for k, v := range customCtx {
+		ctx = context.WithValue(ctx, k, v)
+	}
+	return ctx 
+}
+
+func SetCustomCtx(ctxMap map[string]interface{}) {
+	customCtx = ctxMap
 }
 `

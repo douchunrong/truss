@@ -31,9 +31,3 @@ func SetConfig(cfg svc.Config) svc.Config {
 	return cfg
 }
 `
-
-const HookSetCtx = `
-func SetCtx(ctx context.Context) context.Context {
-	return ctx
-}
-`
