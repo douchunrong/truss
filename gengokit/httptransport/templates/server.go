@@ -15,9 +15,15 @@ var ServerDecodeTemplate = `
 			return nil, errors.Wrapf(err, "cannot read body of http request")
 		}
         
-        if strings.ToLower(runMode) == "dev" {
-           fmt.Println("RequestBody: ", string(buf))
-        }
+		if strings.ToLower(runMode) == "dev" {
+			if len(r.Header) > 0 {
+				fmt.Println("RequestHeader:")
+				for k, v := range r.Header {
+					fmt.Printf("%s=%s\n", k, v[0])
+				}
+			}
+			fmt.Println("RequestBody: ", string(buf))
+		}
         
 		if len(buf) > 0 {
 			// AllowUnknownFields stops the unmarshaler from failing if the JSON contains unknown fields.
