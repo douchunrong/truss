@@ -14,6 +14,11 @@ var ServerDecodeTemplate = `
 		if err != nil {
 			return nil, errors.Wrapf(err, "cannot read body of http request")
 		}
+        
+        if strings.ToLower(runMode) == "dev" {
+           fmt.Println("RequestBody: ", string(buf))
+        }
+        
 		if len(buf) > 0 {
 			// AllowUnknownFields stops the unmarshaler from failing if the JSON contains unknown fields.
 			unmarshaller := jsonpb.Unmarshaler{
@@ -233,5 +238,11 @@ func setCtx(ctx context.Context) context.Context{
 
 func SetCustomCtx(ctxMap map[string]interface{}) {
 	customCtx = ctxMap
+}
+
+// set run mode
+var runMode string
+func SetRunMode(m string) {
+    runMode = m
 }
 `

@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="86c02d9c-5427-4194-86af-1bff236e97a9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deftree/gogothirdparty/gogo.proto" beforeDir="false" afterPath="$PROJECT_DIR$/deftree/gogothirdparty/gogo.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gengokit/handlers/templates/hook.go" beforeDir="false" afterPath="$PROJECT_DIR$/gengokit/handlers/templates/hook.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gengokit/httptransport/templates/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/gengokit/httptransport/templates/server.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
