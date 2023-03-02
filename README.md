@@ -63,9 +63,9 @@ See [USAGE.md](./USAGE.md) and [TUTORIAL.md](./TUTORIAL.md) for more details.
 
 See [DEVELOPING.md](./DEVELOPING.md) for details.
 
-## 配置
+## 配置常见错误
 
-`proto` 文件中添加
+### 1. `proto` 文件中添加
 
 ```protobuf
 import "github.com/douchunrong/truss/deftree/googlethirdparty/annotations.proto";
@@ -73,3 +73,16 @@ import "github.com/douchunrong/truss/deftree/googlethirdparty/annotations.proto"
 
 如果出现 `not found github.com/douchunrong/truss/deftree/googlethirdparty/annotations.proto`
 检查 `$GO_PATH` 下有没有本项目
+
+
+### 2. make 报错
+错误：
+```shell
+apple@appledeMacBook-Pro truss % make
+go generate github.com/douchunrong/truss/gengokit/template
+gengokit/template/gogenerate.go:1: running "go-bindata": exec: "go-bindata": executable file not found in $PATH
+make: *** [gobindata] Error 1
+```
+原因：未找到 go-bindata 可执行文件
+解决办法：需要重新导入环境变量,将  `$GTOPATH/bin` 加入到 `$PATH` 中。（我使用的相关环境变量写到了 ~/.bash_profile ，执行 source ~/.bash_profile 即可）
+
