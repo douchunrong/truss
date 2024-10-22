@@ -254,7 +254,9 @@ var runMode string
 func SetRunMode(m string) {
     runMode = m
 }
+
+// dcr 2024-10-22
 // current responseWriter
-var ResponseHeaderMap map[string]interface{}
+var ResponseHeaderMap map[string]string
 
 `

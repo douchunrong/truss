@@ -30,7 +30,7 @@ func SetConfig(cfg svc.Config) svc.Config {
 	ctxMap := make(map[string]interface{})
 	svc.SetCustomCtx(ctxMap)
     svc.SetRunMode("dev")
-
+	fmt.Println("dev")
 	return cfg
 }
 `
