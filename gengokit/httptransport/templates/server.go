@@ -206,9 +206,11 @@ func EncodeHTTPGenericResponse(_ context.Context, w http.ResponseWriter, respons
 		EmitDefaults: false,
 		OrigName: true,
 	}
-	for k, v := range ResponseHeaderMap {
-        w.Header().Add(k, v)
-    }
+    if ResponseHeaderMap != nil {
+        for k, v := range ResponseHeaderMap {
+			w.Header().Add(k, v)
+		}
+	}
 	return marshaller.Marshal(w, response.(proto.Message))
 }
 

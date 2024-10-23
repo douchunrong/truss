@@ -1,3 +1,4 @@
 #!/bin/bahs
- make dependencies
- make
+go get -u github.com/douchunrong/truss
+make dependencies
+make
